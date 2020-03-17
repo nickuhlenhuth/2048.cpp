@@ -64,7 +64,7 @@ std::string TotalStatisticsOverlay(total_stats_display_data_t tsdd) {
     auto counter{0};
     const auto populate_stats_info = [data_stats, stats_attributes_text,
                                       &counter,
-                                      &stats_richtext](const std::string) {
+                                      &stats_richtext, sp](const std::string) {
       stats_richtext << sp << "│ " << bold_on << std::left << std::setw(18)
                      << std::begin(stats_attributes_text)[counter] << bold_off
                      << " │ " << std::right << std::setw(11)
