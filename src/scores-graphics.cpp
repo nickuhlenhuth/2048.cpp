@@ -46,7 +46,7 @@ std::string ScoreboardOverlay(scoreboard_display_data_list_t sbddl) {
     str_os << std::right;
     str_os << sp << mid_border_text << "\n";
 
-    const auto print_score_stat = [&str_os](const scoreboard_display_data_t i) {
+    const auto print_score_stat = [&str_os, sp](const scoreboard_display_data_t i) {
       str_os << sp << "│ " << std::setw(2) << std::get<0>(i) << ". │ "
              << std::left << std::setw(18) << std::get<1>(i) << std::right
              << " │ " << std::setw(8) << std::get<2>(i) << " │ " << std::setw(4)
@@ -94,7 +94,7 @@ std::string EndGameStatisticsPrompt(finalscore_display_data_t finalscore) {
 
   auto counter{0};
   const auto populate_stats_info = [data_stats, stats_attributes_text, &counter,
-                                    &stats_richtext](const std::string) {
+                                    &stats_richtext, sp](const std::string) {
     stats_richtext << sp << std::left << std::setw(19)
                    << std::begin(stats_attributes_text)[counter] << bold_on
                    << std::begin(data_stats)[counter] << bold_off << "\n";
