@@ -1,0 +1,4 @@
+name: custom-qlpack
+version: 0.0.0
+libraryPathDependencies: codeql-cpp
+suites: custom-suites
