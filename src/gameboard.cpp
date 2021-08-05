@@ -8,6 +8,41 @@
 #include <sstream>
 #include <utility>
 
+
+#include<iostream>
+using namespace std;
+
+class baseClass
+{
+public:
+  baseClass()
+  {
+    cout << "I am the baseClass constructor" << endl;
+  }
+  ~baseClass()
+  {
+    cout << "I am the baseClass destructor" << endl;
+  }
+};
+
+class derivedClass: public baseClass
+{
+public:
+  derivedClass()
+  {
+    cout << "I am the derivedClass constructor" << endl;
+  }
+  ~derivedClass()
+  {
+    cout <<" I am the derivedClass destructor" << endl;
+  }
+};
+int main()
+{
+  derivedClass D;
+  return 0;
+}
+
 namespace Game {
 
 namespace {
